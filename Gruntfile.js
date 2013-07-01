@@ -7,8 +7,23 @@ module.exports = function(grunt) {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") + "\\n" %>' +
         '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
+        '*/\n',
+      domassistant: '/*! DOMAssistant.DOMLoad\n' +
+        '* found here: https://code.google.com/p/domassistant/source/browse/trunk/modules/DOMAssistantLoad.js\n' +
+        '* Developed by Robert Nyman/DOMAssistant team,\n' +
+        '* code/licensing: http://domassistant.googlecode.com/\n' +
+        '*/\n',
+      freelancephp: '/*! @author Victor Villaverde Laan\n' +
+        '* @license MIT\n' +
+        '* @link http://www.freelancephp.net/domready-javascript-object-cross-browser/\n' +
+        '* @link https://github.com/freelancephp/DOMReady\n' +
+        '*/\n',
+      requirejs: '/*! RequireJS domReady\n' +
+        '* with AMD wrapper so you can use it without RequireJS\n' +
+        '* @license RequireJS domReady 2.0.1 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.\n' +
+        '* Available via the MIT or new BSD license.\n' +
+        '* see: http://github.com/requirejs/domReady for details\n' +
+        '*/\n'
     },
     clean: {
       compile: [
@@ -68,17 +83,36 @@ module.exports = function(grunt) {
       all: [ 'tests/domassistant-domready.html' ]
     },
     uglify: {
-      dist: {
+      domassistant: {
         options : {
-          banner: '<%= meta.banner %>'
+          banner: '<%= meta.banner %>\n<%= meta.domassistant %>'
         },
         files: [
           {
-            expand: true,
-            cwd: 'src/',
-            src: [ '*.js' ],
-            dest: 'dist/',
-            filter: 'isFile'
+            src: [ 'src/domassistant-domready.js' ],
+            dest: 'dist/domassistant-domready.min.js'
+          }
+        ]
+      },
+      freelancephp: {
+        options : {
+          banner: '<%= meta.banner %>\n<%= meta.freelancephp %>'
+        },
+        files: [
+          {
+            src: [ 'src/freelancephp-domready.js' ],
+            dest: 'dist/freelancephp-domready.min.js'
+          }
+        ]
+      },
+      requirejs: {
+        options : {
+          banner: '<%= meta.banner %>\n<%= meta.requirejs %>'
+        },
+        files: [
+          {
+            src: [ 'src/requirejs-domready.js' ],
+            dest: 'dist/requirejs-domready.min.js'
           }
         ]
       }

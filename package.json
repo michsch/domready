@@ -1,7 +1,7 @@
 {
   "name": "domready-collection",
-  "description": "domReady Scripty Collection",
-  "version": "0.0.1",
+  "description": "domReady Script Collection",
+  "version": "0.2.0",
   "homepage": "https://github.com/michsch/domReady",
   "author": {
     "name": "Michael Schulze",
