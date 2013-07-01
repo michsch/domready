@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>RequireJS domReady Tests</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="robots" content="noindex,nofollow">
+
+  <!--[if ! lte IE 6]><!-->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css">
+  <!--<![endif]-->
+
+  <script src="../libs/jquery-loader.js"></script>
+  <script src="../libs/qunit/qunit.js"></script>
+
+  <script src="../src/requirejs-domready.js"></script>
+  <script src="domready_test.js"></script>
+
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+  <script>
+    var checkSign = '✓';
+    domReady(function () {
+      document.getElementById('domReady').innerHTML = 'domReady';
+      domReady(function () {
+        document.getElementById('nestedDomReady').innerHTML += 'nestedDomReady';
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <h1 id="domReady"></h1>
+  <h1 id="nestedDomReady"></h1>
+</body>
+</html>
