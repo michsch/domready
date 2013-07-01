@@ -21,16 +21,15 @@
   module
 */
 
-(function(root, factory) {
+(function(root, factory, sr) {
   "use strict";
   if (typeof exports === 'object') {
     module.exports = factory();
   } else if (typeof define === 'function' && define.amd) {
     define(factory);
   } else {
-    root.domReady = factory();
+    root[sr] = factory();
   }
-  return true;
 })((typeof window === 'object' && window) || this, function() {
   "use strict";
   var callReady, doc, domReady, exports, isBrowser, isPageLoaded, isTop, pageLoaded, readyCalls, runCallbacks, scrollIntervalId, testDiv;
@@ -156,4 +155,4 @@
   */
 
   return exports.domReady = domReady;
-});
+}, 'domReady');
