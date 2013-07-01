@@ -1,22 +1,22 @@
 {
   "name": "domready-collection",
   "description": "domReady Script Collection",
-  "version": "0.2.0",
-  "homepage": "https://github.com/michsch/domReady",
+  "version": "0.2.1",
+  "homepage": "https://github.com/michsch/domready-collection",
   "author": {
     "name": "Michael Schulze",
     "email": "ms+github@michsch.de"
   },
   "licenses": [{
     "type": "MIT license",
-    "url": "https://github.com/michsch/domReady/blob/master/MIT.txt"
+    "url": "https://github.com/michsch/domready-collection/blob/master/MIT.txt"
   }],
   "repository": {
     "type": "git",
-    "url": "git@github.com:michsch/domReady.git"
+    "url": "git@github.com:michsch/domready-collection.git"
   },
   "bugs": {
-    "url": "https://github.com/michsch/domReady/issues"
+    "url": "https://github.com/michsch/domready-collection/issues"
   },
   "scripts": {
     "test": "grunt qunit --verbose"
@@ -35,7 +35,7 @@
     "grunt-contrib-watch": "~0.1.4"
   },
   "keywords": [
-    "website"
+    "plugin"
   ],
   "engines": {
     "node": ">=0.8.0"
