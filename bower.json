@@ -1,0 +1,22 @@
+{
+  "name": "domready-collection",
+  "version": "0.2.0",
+  "main" : "./src/requirejs-domready.js",
+  "ignore" : [
+    ".bowerrc",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    "Gruntfile.js",
+    "package.json",
+    "coffee",
+    "libs",
+    "tests"
+  ],
+  "dependencies": {
+    "domready": "latest",
+    "jquery" : "1.10.x",
+    "qunit": "1.11.x",
+    "requirejs-domready": "2.0.x"
+  }
+}
