@@ -19,7 +19,7 @@
   module
 ###
 
-( ( root, factory ) ->
+( ( root, factory, sr ) ->
   "use strict"
 
   if typeof exports is 'object'
@@ -27,13 +27,13 @@
   else if typeof define is 'function' and define.amd
     define factory
   else
-    root.domReady = factory()
+    root[sr] = factory()
 
-  true
+  return
 ) ( typeof window is 'object' and window ) or @, () ->
   "use strict"
 
-  exports = exports || {}
+  exports = exports or {}
 
   isBrowser = typeof window isnt "undefined" and window.document
   isPageLoaded = not isBrowser
@@ -142,3 +142,4 @@
   *###
 
   exports.domReady = domReady
+, 'domReady'
