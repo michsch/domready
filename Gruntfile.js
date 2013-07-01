@@ -80,7 +80,7 @@ module.exports = function(grunt) {
       }
     },
     qunit: {
-      all: [ 'tests/domassistant-domready.html' ]
+      all: [ 'tests/*.html' ]
     },
     uglify: {
       domassistant: {
